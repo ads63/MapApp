@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16A3A1C82901882000B2EAFB /* MapAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C72901882000B2EAFB /* MapAppApp.swift */; };
+		16A3A1C82901882000B2EAFB /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C72901882000B2EAFB /* MapApp.swift */; };
 		16A3A1CA2901882000B2EAFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C92901882000B2EAFB /* ContentView.swift */; };
 		16A3A1CC2901882200B2EAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A3A1CB2901882200B2EAFB /* Assets.xcassets */; };
 		16A3A1CF2901882200B2EAFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A3A1CE2901882200B2EAFB /* Preview Assets.xcassets */; };
+		16A3A1D62901892C00B2EAFB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1D52901892C00B2EAFB /* Location.swift */; };
+		16A3A1D82901895400B2EAFB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1D72901895400B2EAFB /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16A3A1C42901882000B2EAFB /* MapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		16A3A1C72901882000B2EAFB /* MapAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAppApp.swift; sourceTree = "<group>"; };
+		16A3A1C72901882000B2EAFB /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 		16A3A1C92901882000B2EAFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		16A3A1CB2901882200B2EAFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16A3A1CE2901882200B2EAFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		16A3A1D52901892C00B2EAFB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		16A3A1D72901895400B2EAFB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +55,9 @@
 		16A3A1C62901882000B2EAFB /* MapApp */ = {
 			isa = PBXGroup;
 			children = (
-				16A3A1C72901882000B2EAFB /* MapAppApp.swift */,
+				16A3A1D72901895400B2EAFB /* LocationManager.swift */,
+				16A3A1D52901892C00B2EAFB /* Location.swift */,
+				16A3A1C72901882000B2EAFB /* MapApp.swift */,
 				16A3A1C92901882000B2EAFB /* ContentView.swift */,
 				16A3A1CB2901882200B2EAFB /* Assets.xcassets */,
 				16A3A1CD2901882200B2EAFB /* Preview Content */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A3A1D82901895400B2EAFB /* LocationManager.swift in Sources */,
 				16A3A1CA2901882000B2EAFB /* ContentView.swift in Sources */,
-				16A3A1C82901882000B2EAFB /* MapAppApp.swift in Sources */,
+				16A3A1D62901892C00B2EAFB /* Location.swift in Sources */,
+				16A3A1C82901882000B2EAFB /* MapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +278,8 @@
 				DEVELOPMENT_TEAM = 3FDD944J59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking enabled when in use MapApp?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +309,8 @@
 				DEVELOPMENT_TEAM = 3FDD944J59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking enabled when in use MapApp?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

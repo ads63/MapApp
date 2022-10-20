@@ -1,16 +1,20 @@
 //
 //  ContentView.swift
-//  MapApp
+//  MapKitApp
 //
-//  Created by Алексей Шинкарев on 20.10.2022.
+//  Created by Алексей Шинкарев on 17.10.2022.
 //
 
+import MapKit
 import SwiftUI
-
 struct ContentView: View {
+    @StateObject private var locationManager = LocationManager()
+
     var body: some View {
-        Text("Hello, map!")
-            .padding()
+        Map(coordinateRegion: $locationManager.mapRegion, annotationItems: locationManager.locations) { location in
+            MapMarker(coordinate: location.coordinate)
+        }
+        .ignoresSafeArea()
     }
 }
 
