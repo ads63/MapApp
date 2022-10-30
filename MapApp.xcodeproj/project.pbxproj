@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		168B6F04290AE9790083FF5C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 168B6F03290AE9790083FF5C /* Realm */; };
+		168B6F06290AE9790083FF5C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 168B6F05290AE9790083FF5C /* RealmSwift */; };
 		16A3A1C82901882000B2EAFB /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C72901882000B2EAFB /* MapApp.swift */; };
 		16A3A1CA2901882000B2EAFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C92901882000B2EAFB /* ContentView.swift */; };
 		16A3A1CC2901882200B2EAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A3A1CB2901882200B2EAFB /* Assets.xcassets */; };
 		16A3A1CF2901882200B2EAFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A3A1CE2901882200B2EAFB /* Preview Assets.xcassets */; };
 		16A3A1D62901892C00B2EAFB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1D52901892C00B2EAFB /* Location.swift */; };
 		16A3A1D82901895400B2EAFB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1D72901895400B2EAFB /* LocationManager.swift */; };
+		16D5ADC82905BDB8001AA3EF /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5ADC72905BDB8001AA3EF /* StyledButton.swift */; };
+		16E0149529067A2100AE9EA4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E0149429067A2100AE9EA4 /* MapView.swift */; };
+		16F450E2290BD77F00574DF0 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F450E1290BD77F00574DF0 /* RealmService.swift */; };
+		16F450E4290BDAF400574DF0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F450E3290BDAF400574DF0 /* Point.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +29,11 @@
 		16A3A1CE2901882200B2EAFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16A3A1D52901892C00B2EAFB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		16A3A1D72901895400B2EAFB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		16C04C7F2902B43500C00428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		16D5ADC72905BDB8001AA3EF /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		16E0149429067A2100AE9EA4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		16F450E1290BD77F00574DF0 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		16F450E3290BDAF400574DF0 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168B6F06290AE9790083FF5C /* RealmSwift in Frameworks */,
+				168B6F04290AE9790083FF5C /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +68,11 @@
 		16A3A1C62901882000B2EAFB /* MapApp */ = {
 			isa = PBXGroup;
 			children = (
+				16C04C7F2902B43500C00428 /* Info.plist */,
+				16F450E1290BD77F00574DF0 /* RealmService.swift */,
+				16F450E3290BDAF400574DF0 /* Point.swift */,
+				16D5ADC72905BDB8001AA3EF /* StyledButton.swift */,
+				16E0149429067A2100AE9EA4 /* MapView.swift */,
 				16A3A1D72901895400B2EAFB /* LocationManager.swift */,
 				16A3A1D52901892C00B2EAFB /* Location.swift */,
 				16A3A1C72901882000B2EAFB /* MapApp.swift */,
@@ -89,6 +107,10 @@
 			dependencies = (
 			);
 			name = MapApp;
+			packageProductDependencies = (
+				168B6F03290AE9790083FF5C /* Realm */,
+				168B6F05290AE9790083FF5C /* RealmSwift */,
+			);
 			productName = MapApp;
 			productReference = 16A3A1C42901882000B2EAFB /* MapApp.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +139,9 @@
 				Base,
 			);
 			mainGroup = 16A3A1BB2901882000B2EAFB;
+			packageReferences = (
+				168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 16A3A1C52901882000B2EAFB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,7 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A3A1D82901895400B2EAFB /* LocationManager.swift in Sources */,
+				16E0149529067A2100AE9EA4 /* MapView.swift in Sources */,
+				16F450E2290BD77F00574DF0 /* RealmService.swift in Sources */,
+				16F450E4290BDAF400574DF0 /* Point.swift in Sources */,
 				16A3A1CA2901882000B2EAFB /* ContentView.swift in Sources */,
+				16D5ADC82905BDB8001AA3EF /* StyledButton.swift in Sources */,
 				16A3A1D62901892C00B2EAFB /* Location.swift in Sources */,
 				16A3A1C82901882000B2EAFB /* MapApp.swift in Sources */,
 			);
@@ -278,8 +307,10 @@
 				DEVELOPMENT_TEAM = 3FDD944J59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking enabled when in use MapApp?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Is Locaion tracking enabled?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking when in use enabled?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,8 +340,10 @@
 				DEVELOPMENT_TEAM = 3FDD944J59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapApp/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking enabled when in use MapApp?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Is Locaion tracking enabled?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking when in use enabled?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,6 +384,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.32.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		168B6F03290AE9790083FF5C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		168B6F05290AE9790083FF5C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 16A3A1BC2901882000B2EAFB /* Project object */;
 }
