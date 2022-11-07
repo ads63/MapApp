@@ -7,43 +7,17 @@
 
 import MapKit
 import SwiftUI
+
 struct ContentView: View {
-    @StateObject private var locationManager = LocationManager()
-    @State private var showLoadAlert = false
-
+    @State private var showMapView: Bool = false
     var body: some View {
-        ZStack {
-            MapView(region: $locationManager.mapRegion, lineCoordinates: $locationManager.locations)
-                .ignoresSafeArea()
+        NavigationView {
             VStack {
-                StyledButton(title: "Display former track", action: {
-                    if locationManager.isTrackingOn {
-                        showLoadAlert = true
-                    } else {
-                        locationManager.loadTrack()
-                    }
-
-                })
-                Spacer()
-
-                HStack {
-                    StyledButton(title: "Start track", action: {
-                        locationManager.startTracking()
-                    })
-                    StyledButton(title: "Finish track", action: {
-                        locationManager.finishAndSaveTracking()
-                    })
-                }
-                .padding(.bottom, 10)
+                NavigationLink(isActive: $showMapView,
+                               destination: { MainView(showMapView: $showMapView) },
+                               label: { EmptyView() })
+                LoginView(showMapView: $showMapView)
             }
-        }
-        .alert(isPresented: $showLoadAlert) {
-            Alert(title: Text("Warning"),
-                  message: Text("Location tracking will be terminated"),
-                  dismissButton: .default(Text("Ok")) {
-                      locationManager.finishTracking()
-                      locationManager.loadTrack()
-                  })
         }
     }
 }
