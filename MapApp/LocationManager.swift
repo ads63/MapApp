@@ -21,6 +21,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let lastLocation = lastLocation else { return Location.defaultLocation }
         return lastLocation
     }
+
     private(set) var isTrackingOn = false
     private let locationManager = CLLocationManager()
     private let realmService = RealmService()
@@ -33,7 +34,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.requestAlwaysAuthorization()
-        realmService.dropDB()
+        realmService.deletePointsAll()
     }
 
     var statusString: String {

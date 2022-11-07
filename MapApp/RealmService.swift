@@ -21,6 +21,29 @@ final class RealmService {
         }
     }
 
+    func selectUser(login: String) -> Results<User>? {
+        var data: Results<User>?
+        do {
+            let realm = try Realm(configuration: RealmService.config)
+            data = realm.objects(User.self).where { $0.login == login }
+        } catch {
+            print(error)
+        }
+        return data
+    }
+
+    func insertUser(user: User) {
+        do {
+            let realm = try Realm(configuration: RealmService.config)
+            deletePointsAll()
+            realm.beginWrite()
+            realm.add(user, update: .all)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+
     func selectPoints() -> Results<Point>? {
         var data: Results<Point>?
         do {

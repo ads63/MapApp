@@ -22,9 +22,9 @@ struct Location: Identifiable, Equatable {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
+
     static let defaultLocation = Location(id: UUID(),
                                           latitude: 37.40169564, longitude: -122.18389160)
-
 
     static func ==(lhs: Location, rhs: Location) -> Bool {
         lhs.latitude.isEqual(to: rhs.latitude) &&
