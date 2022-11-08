@@ -12,13 +12,17 @@ struct LoginView: View {
     @Binding var showMapView: Bool
     @State private var login = ""
     @State private var password = ""
-    @State private var showPasswordAlert = false
+    @State private var showUserAlert = false
     var body: some View {
         VStack {
             Spacer()
             TextField("Login", text: $login)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
                 .padding()
-            TextField("Password", text: $password)
+            SecureField("Password", text: $password)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
                 .padding()
             Button("Login", action: { loginUser() })
                 .foregroundColor(.blue)
@@ -32,7 +36,7 @@ struct LoginView: View {
             login = ""
             password = ""
             showMapView = false
-        }.alert(isPresented: $showPasswordAlert) {
+        }.alert(isPresented: $showUserAlert) {
             Alert(title: Text("Warning"),
                   message: Text("Invalid user"),
                   dismissButton: .default(Text("Ok")))
@@ -43,13 +47,17 @@ struct LoginView: View {
         guard let user = realmService.selectUser(login: login)?.first,
               user.password == password
         else {
-            showPasswordAlert.toggle()
+            showUserAlert.toggle()
             return
         }
         showMapView = true
     }
 
     private func registerUser() {
+        if login.isEmpty || password.isEmpty {
+            showUserAlert.toggle()
+            return
+        }
         realmService.insertUser(user: User(login: login, password: password))
         showMapView = true
     }
