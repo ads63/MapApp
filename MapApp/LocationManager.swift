@@ -94,7 +94,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         if locations.count <= 1 {
             return MKCoordinateSpan(latitudeDelta: Self.minDelta, longitudeDelta: Self.minDelta)
         }
-        var calculatedDelta = LocationManager.mapPadding * 2.0 * max(
+        var calculatedDelta = LocationManager.mapPadding * 2.2 * max(
             abs((locations.map { $0.longitude }.max() ?? 180.0) - centerLocation.longitude),
             abs(centerLocation.longitude - (locations.map { $0.longitude }.min() ?? -180.0)),
             abs((locations.map { $0.latitude }.max() ?? 90.0) - centerLocation.latitude),
