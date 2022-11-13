@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var showMapView: Bool = false
     @State private var blurRadius = CGFloat(0.0)
+    @State private var text = "texttexttexttext"
     @Environment(\.scenePhase) var scenePhase
     var body: some View {
         NavigationView {
@@ -21,6 +22,7 @@ struct ContentView: View {
                 LoginView(showMapView: $showMapView)
             }
         }
+        .edgesIgnoringSafeArea(.bottom)
         .blur(radius: blurRadius)
         .onChange(of: scenePhase) { phase in
             blurRadius = phase == .active ? CGFloat(0.0) : CGFloat(20.0)
