@@ -8,14 +8,15 @@
 import CoreLocation
 import Foundation
 import MapKit
+import RxSwift
 
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocationManager: NSObject, ObservableObject {
     private static let minDelta: Double = 0.01
     private static let mapPadding = 1.1
 
     @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Location.defaultLocation.latitude, longitude: Location.defaultLocation.longitude), span: MKCoordinateSpan(latitudeDelta: LocationManager.minDelta, longitudeDelta: LocationManager.minDelta))
     @Published var locations: [Location] = []
-    @Published var locationStatus: CLAuthorizationStatus?
+    private var locationStatus: CLAuthorizationStatus?
     private var lastLocation: Location?
     private var centerLocation: Location {
         guard let lastLocation = lastLocation else { return Location.defaultLocation }
@@ -23,33 +24,37 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     private(set) var isTrackingOn = false
-    private let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManagerRX()
     private let realmService = RealmService()
+    private let disposeBag = DisposeBag()
+    private var locationDisposable: Disposable?
+    private var locationStatusDisposable: Disposable?
 
     override init() {
         super.init()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.requestAlwaysAuthorization()
+        locationStatusDisposable = locationManager.locationStatus.bind(onNext: { [weak self] newStatus in
+            self?.locationStatus = newStatus
+        })
+        locationDisposable = locationManager.location.bind(onNext: {
+            [weak self] newLocation in
+            guard let self = self,
+                  self.isTrackingOn,
+                  let newLocation = newLocation
+            else { return }
+            self.lastLocation = Location(latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
+            if self.centerLocation != Location.defaultLocation {
+                self.locations.append(self.centerLocation)
+            }
+            self.mapRegion.center = CLLocationCoordinate2D(latitude: self.centerLocation.latitude, longitude: self.centerLocation.longitude)
+            self.mapRegion.span = self.getMKCoordinateSpan()
+
+        })
         realmService.deletePointsAll()
     }
 
-    var statusString: String {
-        guard let status = locationStatus else {
-            return "unknown"
-        }
-
-        switch status {
-        case .notDetermined: return "notDetermined"
-        case .authorizedWhenInUse: return "authorizedWhenInUse"
-        case .authorizedAlways: return "authorizedAlways"
-        case .restricted: return "restricted"
-        case .denied: return "denied"
-        default: return "unknown"
-        }
+    deinit {
+        locationDisposable?.disposed(by: disposeBag)
+        locationStatusDisposable?.disposed(by: disposeBag)
     }
 
     func startTracking() {
@@ -57,8 +62,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             isTrackingOn = true
             locations.removeAll()
             locationManager.startUpdatingLocation()
-            guard let location = locationManager.location else { return }
-            lastLocation = Location(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         }
     }
 
@@ -103,22 +106,5 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             calculatedDelta = Self.minDelta
         }
         return MKCoordinateSpan(latitudeDelta: calculatedDelta, longitudeDelta: calculatedDelta)
-    }
-
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        locationStatus = status
-        print(#function, statusString)
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if !isTrackingOn { return }
-        guard let location = locations.last else { return }
-        lastLocation = Location(id: UUID(), latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        if centerLocation != Location.defaultLocation {
-            self.locations.append(centerLocation)
-        }
-        mapRegion.center = CLLocationCoordinate2D(latitude: centerLocation.latitude, longitude: centerLocation.longitude)
-        mapRegion.span = getMKCoordinateSpan()
-        print(#function, location)
     }
 }

@@ -67,9 +67,11 @@ struct LoginView: View {
     private func subsribeUserChanges() {
         userBinding = Observable
             .combineLatest(loginSubject.asObservable(),
-                           passwordSubject.asObservable()).map { loginValue, passwordValue in
+                           passwordSubject.asObservable())
+            .map { loginValue, passwordValue in
                 !loginValue.isEmpty && passwordValue.count > 5
-            }.bind(onNext: { userState in
+            }
+            .bind(onNext: { userState in
                 self.isUserValid = userState
             })
     }
