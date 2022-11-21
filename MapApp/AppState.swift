@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class AppState: ObservableObject{
+class AppState: ObservableObject {
     @Published var isActive: Bool?
     @Published var deactivationState = false
 
@@ -34,10 +34,6 @@ class AppState: ObservableObject{
             }
         )
     }
-
-//    static func == (lhs: AppState, rhs: AppState) -> Bool {
-//        lhs.isActive == rhs.isActive
-//    }
 
     deinit {
         observers.forEach(NotificationCenter.default.removeObserver)
