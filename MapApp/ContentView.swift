@@ -7,12 +7,17 @@
 
 import MapKit
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
+    @EnvironmentObject var appState: AppState
     @State private var showMapView: Bool = false
     @State private var blurRadius = CGFloat(0.0)
-    @State private var text = "texttexttexttext"
     @Environment(\.scenePhase) var scenePhase
+    init() {
+        LocalNotifyService.requestAuthorization()
+    }
+
     var body: some View {
         NavigationView {
             VStack {
@@ -26,6 +31,9 @@ struct ContentView: View {
         .blur(radius: blurRadius)
         .onChange(of: scenePhase) { phase in
             blurRadius = phase == .active ? CGFloat(0.0) : CGFloat(20.0)
+        }
+        .onChange(of: appState.deactivationState) { state in
+            if state { LocalNotifyService.addNotification() }
         }
     }
 }

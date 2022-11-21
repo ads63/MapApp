@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct MapApp: App {
+    let appState = AppState()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(appState)
         }
     }
 }
