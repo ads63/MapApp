@@ -4,7 +4,6 @@
 //
 //  Created by Алексей Шинкарев on 17.10.2022.
 //
-
 import MapKit
 import SwiftUI
 import UserNotifications
@@ -13,7 +12,9 @@ struct ContentView: View {
     @EnvironmentObject var appState: AppState
     @State private var showMapView: Bool = false
     @State private var blurRadius = CGFloat(0.0)
+    @State private var userName: String = ""
     @Environment(\.scenePhase) var scenePhase
+
     init() {
         LocalNotifyService.requestAuthorization()
     }
@@ -22,9 +23,9 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink(isActive: $showMapView,
-                               destination: { MainView(showMapView: $showMapView) },
+                               destination: { MainView(showMapView: $showMapView, userName: $userName) },
                                label: { EmptyView() })
-                LoginView(showMapView: $showMapView)
+                LoginView(showMapView: $showMapView, userName: $userName)
             }
         }
         .edgesIgnoringSafeArea(.bottom)

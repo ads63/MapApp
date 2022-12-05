@@ -57,6 +57,7 @@ class LocationManager: NSObject, ObservableObject {
         locationStatusDisposable?.disposed(by: disposeBag)
     }
 
+
     func startTracking() {
         if !isTrackingOn, [.authorizedAlways, .authorizedWhenInUse].contains(where: { $0 == locationStatus }) {
             isTrackingOn = true

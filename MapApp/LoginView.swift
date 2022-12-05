@@ -13,6 +13,7 @@ struct LoginView: View {
     let realmService = RealmService()
     let disposeBag = DisposeBag()
     @Binding var showMapView: Bool
+    @Binding var userName: String
     @State var loginSubject = PublishSubject<String>()
     @State var passwordSubject = PublishSubject<String>()
     @State private var login = ""
@@ -57,6 +58,8 @@ struct LoginView: View {
             showMapView = false
             isUserValid = false
             subsribeUserChanges()
+//            let path = Bundle.main.path(forResource: "me", ofType: "jpg")
+
         }.alert(isPresented: $showUserAlert) {
             Alert(title: Text("Warning"),
                   message: Text("Invalid user"),
@@ -87,6 +90,7 @@ struct LoginView: View {
             showUserAlert.toggle()
             return
         }
+        userName = login
         showMapView = true
     }
 
@@ -95,7 +99,9 @@ struct LoginView: View {
             showUserAlert.toggle()
             return
         }
-        realmService.insertUser(user: User(login: login, password: password))
+        let user = User(login: login, password: password)
+        userName = login
+        realmService.insertUser(user: user)
         showMapView = true
     }
 }
