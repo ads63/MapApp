@@ -10,21 +10,32 @@ import SwiftUI
 
 struct MainView: View {
     @Binding var showMapView: Bool
+    @Binding var userName: String
     @StateObject private var locationManager = LocationManager()
+    @StateObject private var viewModel: ViewModel = .shared
     @State private var showLoadAlert = false
+    @State private var showCameraView = false
+
     var body: some View {
         ZStack {
-            MapView(region: $locationManager.mapRegion, lineCoordinates: $locationManager.locations)
+            MapView(region: $locationManager.mapRegion, lineCoordinates: $locationManager.locations, avatar: $viewModel.avatarImage)
                 .ignoresSafeArea()
             VStack {
-                StyledButton(title: "Display former track", action: {
-                    if locationManager.isTrackingOn {
-                        showLoadAlert = true
-                    } else {
-                        locationManager.loadTrack()
-                    }
+                HStack {
+                    StyledButton(title: "Display former track", action: {
+                        if locationManager.isTrackingOn {
+                            showLoadAlert = true
+                        } else {
+                            locationManager.loadTrack()
+                        }
 
-                })
+                    })
+                    StyledButton(title: "New avatar", action: {
+                        showCameraView.toggle()
+                    }).sheet(isPresented: $showCameraView) {
+                        ImageSelectorView(viewModel: .shared)
+                    }
+                }
                 Spacer()
 
                 HStack {
@@ -38,6 +49,12 @@ struct MainView: View {
                 .padding(.bottom, 10)
             }
         }
+        .onAppear {
+            viewModel.userName = self.userName
+        }
+        .onChange(of: self.userName) { newValue in
+            viewModel.userName = newValue
+        }
         .alert(isPresented: $showLoadAlert) {
             Alert(title: Text("Warning"),
                   message: Text("Location tracking will be terminated"),
@@ -45,6 +62,17 @@ struct MainView: View {
                       locationManager.finishTracking()
                       locationManager.loadTrack()
                   })
+        }
+    }
+
+    @ViewBuilder
+    func imageView(for image: UIImage?) -> some View {
+        if let image = image {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFill()
+        } else {
+            Text("No image selected")
         }
     }
 }

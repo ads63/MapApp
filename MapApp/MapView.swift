@@ -11,6 +11,7 @@ import SwiftUI
 struct MapView: UIViewRepresentable {
     @Binding var region: MKCoordinateRegion
     @Binding var lineCoordinates: [Location]
+    @Binding var avatar: UIImage
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -26,6 +27,10 @@ struct MapView: UIViewRepresentable {
 
     func updateUIView(_ view: MKMapView, context: Context) {
         let overlays = view.overlays
+        let annotations = view.annotations
+        if !annotations.isEmpty {
+            view.removeAnnotations(annotations)
+        }
 
         if !overlays.isEmpty {
             view.removeOverlays(overlays)
@@ -34,6 +39,10 @@ struct MapView: UIViewRepresentable {
         if lineCoordinates.count > 1 {
             let polyline = MKPolyline(coordinates: lineCoordinates.map { $0.coordinate }, count: lineCoordinates.count)
             view.addOverlay(polyline)
+        }
+        if let lastCoordinates = lineCoordinates.last {
+            let annotation = LandmarkAnnotation(coordinate: lastCoordinates.coordinate)
+            view.addAnnotation(annotation)
         }
     }
 
@@ -47,6 +56,16 @@ class Coordinator: NSObject, MKMapViewDelegate {
 
     init(_ parent: MapView) {
         self.parent = parent
+    }
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "avatarView")
+        annotationView.image = parent.avatar
+        annotationView.layer.cornerRadius = parent.avatar.size.width / 2.0
+        annotationView.clipsToBounds = true
+        annotationView.layer.borderWidth = 1
+        annotationView.layer.borderColor = UIColor.white.cgColor
+        return annotationView
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

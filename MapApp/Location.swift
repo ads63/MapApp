@@ -7,20 +7,20 @@
 
 import CoreLocation
 import Foundation
+import MapKit
 
 struct Location: Identifiable, Equatable {
     var id: UUID
     var latitude: Double
     var longitude: Double
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 
     init(id: UUID = UUID(), latitude: Double?, longitude: Double?) {
         self.id = id
         self.latitude = latitude ?? Location.defaultLocation.latitude
         self.longitude = longitude ?? Location.defaultLocation.longitude
-    }
-
-    var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 
     static let defaultLocation = Location(id: UUID(),
