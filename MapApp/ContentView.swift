@@ -1,16 +1,41 @@
 //
 //  ContentView.swift
-//  MapApp
+//  MapKitApp
 //
-//  Created by Алексей Шинкарев on 20.10.2022.
+//  Created by Алексей Шинкарев on 17.10.2022.
 //
-
+import MapKit
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
+    @EnvironmentObject var appState: AppState
+    @State private var showMapView: Bool = false
+    @State private var blurRadius = CGFloat(0.0)
+    @State private var userName: String = ""
+    @Environment(\.scenePhase) var scenePhase
+
+    init() {
+        LocalNotifyService.requestAuthorization()
+    }
+
     var body: some View {
-        Text("Hello, map!")
-            .padding()
+        NavigationView {
+            VStack {
+                NavigationLink(isActive: $showMapView,
+                               destination: { MainView(showMapView: $showMapView, userName: $userName) },
+                               label: { EmptyView() })
+                LoginView(showMapView: $showMapView, userName: $userName)
+            }
+        }
+        .edgesIgnoringSafeArea(.bottom)
+        .blur(radius: blurRadius)
+        .onChange(of: scenePhase) { phase in
+            blurRadius = phase == .active ? CGFloat(0.0) : CGFloat(20.0)
+        }
+        .onChange(of: appState.deactivationState) { state in
+            if state { LocalNotifyService.addNotification() }
+        }
     }
 }
 

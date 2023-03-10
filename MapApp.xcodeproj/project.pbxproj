@@ -7,18 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16A3A1C82901882000B2EAFB /* MapAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C72901882000B2EAFB /* MapAppApp.swift */; };
-		16A3A1CA2901882000B2EAFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C92901882000B2EAFB /* ContentView.swift */; };
+		1524E0170255EE19E8BDFE07 /* libPods-MapApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A7A0E643D740A5C6425A64 /* libPods-MapApp.a */; };
+		16071A72291F7052000A2A6F /* CLLocationManagerRX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16071A71291F7052000A2A6F /* CLLocationManagerRX.swift */; };
+		1614B41B2933A22D00DCEEA1 /* iCimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1614B4192933A22D00DCEEA1 /* iCimulator.swift */; };
+		1614B41C2933A22D00DCEEA1 /* iCimulator.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1614B41A2933A22D00DCEEA1 /* iCimulator.plist */; };
+		1614B41E2933A2E000DCEEA1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1614B41D2933A2E000DCEEA1 /* Podfile */; };
+		164E794B29140AB3008C8A34 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E794A29140AB3008C8A34 /* MainView.swift */; };
+		164E794D29140CBA008C8A34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E794C29140CBA008C8A34 /* User.swift */; };
+		164E794F29140DF8008C8A34 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E794E29140DF8008C8A34 /* LoginView.swift */; };
+		1672F665291B8F6800DEEE1C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1672F664291B8F6800DEEE1C /* RxCocoa */; };
+		1672F667291B8F6800DEEE1C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1672F666291B8F6800DEEE1C /* RxSwift */; };
+		168B6F04290AE9790083FF5C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 168B6F03290AE9790083FF5C /* Realm */; };
+		168B6F06290AE9790083FF5C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 168B6F05290AE9790083FF5C /* RealmSwift */; };
+		16A3A1C82901882000B2EAFB /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1C72901882000B2EAFB /* MapApp.swift */; };
 		16A3A1CC2901882200B2EAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A3A1CB2901882200B2EAFB /* Assets.xcassets */; };
 		16A3A1CF2901882200B2EAFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A3A1CE2901882200B2EAFB /* Preview Assets.xcassets */; };
+		16A3A1D62901892C00B2EAFB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1D52901892C00B2EAFB /* Location.swift */; };
+		16A3A1D82901895400B2EAFB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A3A1D72901895400B2EAFB /* LocationManager.swift */; };
+		16ABAD43292B996C00DB9CE0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD42292B996C00DB9CE0 /* AppState.swift */; };
+		16ABAD45292BA91A00DB9CE0 /* LocalNotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAD44292BA91A00DB9CE0 /* LocalNotifyService.swift */; };
+		16D5ADC82905BDB8001AA3EF /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D5ADC72905BDB8001AA3EF /* StyledButton.swift */; };
+		16E0149529067A2100AE9EA4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E0149429067A2100AE9EA4 /* MapView.swift */; };
+		16E36EB72938819200AAD34C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E36EB62938819200AAD34C /* ContentView.swift */; };
+		16EC943E293CF5A90012A16E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC943D293CF5A90012A16E /* ImagePicker.swift */; };
+		16EC9440293D01790012A16E /* ImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC943F293D01790012A16E /* ImageSelectorView.swift */; };
+		16F450E2290BD77F00574DF0 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F450E1290BD77F00574DF0 /* RealmService.swift */; };
+		16F450E4290BDAF400574DF0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F450E3290BDAF400574DF0 /* Point.swift */; };
+		16FF806E293DF35600E1FFAF /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FF806D293DF35600E1FFAF /* LandmarkAnnotation.swift */; };
+		16FF8070293E31F500E1FFAF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FF806F293E31F500E1FFAF /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16071A71291F7052000A2A6F /* CLLocationManagerRX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerRX.swift; sourceTree = "<group>"; };
+		1614B4192933A22D00DCEEA1 /* iCimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCimulator.swift; sourceTree = "<group>"; };
+		1614B41A2933A22D00DCEEA1 /* iCimulator.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = iCimulator.plist; sourceTree = "<group>"; };
+		1614B41D2933A2E000DCEEA1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		164E794A29140AB3008C8A34 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		164E794C29140CBA008C8A34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		164E794E29140DF8008C8A34 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		16A3A1C42901882000B2EAFB /* MapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		16A3A1C72901882000B2EAFB /* MapAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAppApp.swift; sourceTree = "<group>"; };
-		16A3A1C92901882000B2EAFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		16A3A1C72901882000B2EAFB /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
 		16A3A1CB2901882200B2EAFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16A3A1CE2901882200B2EAFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		16A3A1D52901892C00B2EAFB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		16A3A1D72901895400B2EAFB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		16ABAD42292B996C00DB9CE0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		16ABAD44292BA91A00DB9CE0 /* LocalNotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifyService.swift; sourceTree = "<group>"; };
+		16C04C7F2902B43500C00428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		16D5ADC72905BDB8001AA3EF /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		16E0149429067A2100AE9EA4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		16E36EB62938819200AAD34C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		16EC943D293CF5A90012A16E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		16EC943F293D01790012A16E /* ImageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorView.swift; sourceTree = "<group>"; };
+		16F450E1290BD77F00574DF0 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		16F450E3290BDAF400574DF0 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		16FF806D293DF35600E1FFAF /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
+		16FF806F293E31F500E1FFAF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		43505A9AF7012541737280D4 /* Pods-MapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapApp.debug.xcconfig"; path = "Target Support Files/Pods-MapApp/Pods-MapApp.debug.xcconfig"; sourceTree = "<group>"; };
+		920CC4FE111B2AE5D641EFF2 /* Pods-MapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapApp.release.xcconfig"; path = "Target Support Files/Pods-MapApp/Pods-MapApp.release.xcconfig"; sourceTree = "<group>"; };
+		92A7A0E643D740A5C6425A64 /* libPods-MapApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +73,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1672F665291B8F6800DEEE1C /* RxCocoa in Frameworks */,
+				168B6F06290AE9790083FF5C /* RealmSwift in Frameworks */,
+				1672F667291B8F6800DEEE1C /* RxSwift in Frameworks */,
+				168B6F04290AE9790083FF5C /* Realm in Frameworks */,
+				1524E0170255EE19E8BDFE07 /* libPods-MapApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		167412EF293BA9CA0042B73D /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				16EC943D293CF5A90012A16E /* ImagePicker.swift */,
+				16EC943F293D01790012A16E /* ImageSelectorView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		16A3A1BB2901882000B2EAFB = {
 			isa = PBXGroup;
 			children = (
+				1614B41D2933A2E000DCEEA1 /* Podfile */,
 				16A3A1C62901882000B2EAFB /* MapApp */,
 				16A3A1C52901882000B2EAFB /* Products */,
+				7D4A13DE61D749E0835738FC /* Pods */,
+				D74378FF316B948607EE36B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,9 +115,27 @@
 		16A3A1C62901882000B2EAFB /* MapApp */ = {
 			isa = PBXGroup;
 			children = (
-				16A3A1C72901882000B2EAFB /* MapAppApp.swift */,
-				16A3A1C92901882000B2EAFB /* ContentView.swift */,
+				16FF806F293E31F500E1FFAF /* ViewModel.swift */,
+				16FF806D293DF35600E1FFAF /* LandmarkAnnotation.swift */,
+				167412EF293BA9CA0042B73D /* Camera */,
+				1614B41A2933A22D00DCEEA1 /* iCimulator.plist */,
+				1614B4192933A22D00DCEEA1 /* iCimulator.swift */,
+				16C04C7F2902B43500C00428 /* Info.plist */,
+				16ABAD42292B996C00DB9CE0 /* AppState.swift */,
+				16ABAD44292BA91A00DB9CE0 /* LocalNotifyService.swift */,
+				16071A71291F7052000A2A6F /* CLLocationManagerRX.swift */,
+				164E794A29140AB3008C8A34 /* MainView.swift */,
+				16F450E1290BD77F00574DF0 /* RealmService.swift */,
+				16F450E3290BDAF400574DF0 /* Point.swift */,
+				164E794C29140CBA008C8A34 /* User.swift */,
+				164E794E29140DF8008C8A34 /* LoginView.swift */,
+				16D5ADC72905BDB8001AA3EF /* StyledButton.swift */,
+				16E0149429067A2100AE9EA4 /* MapView.swift */,
+				16A3A1D72901895400B2EAFB /* LocationManager.swift */,
+				16A3A1D52901892C00B2EAFB /* Location.swift */,
+				16A3A1C72901882000B2EAFB /* MapApp.swift */,
 				16A3A1CB2901882200B2EAFB /* Assets.xcassets */,
+				16E36EB62938819200AAD34C /* ContentView.swift */,
 				16A3A1CD2901882200B2EAFB /* Preview Content */,
 			);
 			path = MapApp;
@@ -67,6 +149,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7D4A13DE61D749E0835738FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43505A9AF7012541737280D4 /* Pods-MapApp.debug.xcconfig */,
+				920CC4FE111B2AE5D641EFF2 /* Pods-MapApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D74378FF316B948607EE36B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92A7A0E643D740A5C6425A64 /* libPods-MapApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +173,23 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 16A3A1D22901882200B2EAFB /* Build configuration list for PBXNativeTarget "MapApp" */;
 			buildPhases = (
+				4964B1A3CDEE28416C3AC833 /* [CP] Check Pods Manifest.lock */,
 				16A3A1C02901882000B2EAFB /* Sources */,
 				16A3A1C12901882000B2EAFB /* Frameworks */,
 				16A3A1C22901882000B2EAFB /* Resources */,
+				A931495D963AA988ADC1BDE0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MapApp;
+			packageProductDependencies = (
+				168B6F03290AE9790083FF5C /* Realm */,
+				168B6F05290AE9790083FF5C /* RealmSwift */,
+				1672F664291B8F6800DEEE1C /* RxCocoa */,
+				1672F666291B8F6800DEEE1C /* RxSwift */,
+			);
 			productName = MapApp;
 			productReference = 16A3A1C42901882000B2EAFB /* MapApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +218,10 @@
 				Base,
 			);
 			mainGroup = 16A3A1BB2901882000B2EAFB;
+			packageReferences = (
+				168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1672F663291B8F6800DEEE1C /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 16A3A1C52901882000B2EAFB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,19 +237,80 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A3A1CF2901882200B2EAFB /* Preview Assets.xcassets in Resources */,
+				1614B41C2933A22D00DCEEA1 /* iCimulator.plist in Resources */,
+				1614B41E2933A2E000DCEEA1 /* Podfile in Resources */,
 				16A3A1CC2901882200B2EAFB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4964B1A3CDEE28416C3AC833 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A931495D963AA988ADC1BDE0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapApp/Pods-MapApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapApp/Pods-MapApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapApp/Pods-MapApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		16A3A1C02901882000B2EAFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A3A1CA2901882000B2EAFB /* ContentView.swift in Sources */,
-				16A3A1C82901882000B2EAFB /* MapAppApp.swift in Sources */,
+				16A3A1D82901895400B2EAFB /* LocationManager.swift in Sources */,
+				164E794B29140AB3008C8A34 /* MainView.swift in Sources */,
+				16E36EB72938819200AAD34C /* ContentView.swift in Sources */,
+				16E0149529067A2100AE9EA4 /* MapView.swift in Sources */,
+				16F450E2290BD77F00574DF0 /* RealmService.swift in Sources */,
+				16ABAD45292BA91A00DB9CE0 /* LocalNotifyService.swift in Sources */,
+				16EC9440293D01790012A16E /* ImageSelectorView.swift in Sources */,
+				16F450E4290BDAF400574DF0 /* Point.swift in Sources */,
+				16071A72291F7052000A2A6F /* CLLocationManagerRX.swift in Sources */,
+				16D5ADC82905BDB8001AA3EF /* StyledButton.swift in Sources */,
+				16A3A1D62901892C00B2EAFB /* Location.swift in Sources */,
+				16FF8070293E31F500E1FFAF /* ViewModel.swift in Sources */,
+				164E794F29140DF8008C8A34 /* LoginView.swift in Sources */,
+				16ABAD43292B996C00DB9CE0 /* AppState.swift in Sources */,
+				164E794D29140CBA008C8A34 /* User.swift in Sources */,
+				16FF806E293DF35600E1FFAF /* LandmarkAnnotation.swift in Sources */,
+				16A3A1C82901882000B2EAFB /* MapApp.swift in Sources */,
+				16EC943E293CF5A90012A16E /* ImagePicker.swift in Sources */,
+				1614B41B2933A22D00DCEEA1 /* iCimulator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +433,7 @@
 		};
 		16A3A1D32901882200B2EAFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43505A9AF7012541737280D4 /* Pods-MapApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -270,11 +443,18 @@
 				DEVELOPMENT_TEAM = 3FDD944J59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Is Camera usage enabled?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Is Locaion tracking enabled?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking when in use enabled?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Is Photo Library available?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,6 +470,7 @@
 		};
 		16A3A1D42901882200B2EAFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 920CC4FE111B2AE5D641EFF2 /* Pods-MapApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,11 +480,18 @@
 				DEVELOPMENT_TEAM = 3FDD944J59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MapApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Is Camera usage enabled?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Is Locaion tracking enabled?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Is Locaion tracking when in use enabled?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Is Photo Library available?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +527,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1672F663291B8F6800DEEE1C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.32.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1672F664291B8F6800DEEE1C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1672F663291B8F6800DEEE1C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		1672F666291B8F6800DEEE1C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1672F663291B8F6800DEEE1C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		168B6F03290AE9790083FF5C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		168B6F05290AE9790083FF5C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 168B6F02290AE9790083FF5C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 16A3A1BC2901882000B2EAFB /* Project object */;
 }
